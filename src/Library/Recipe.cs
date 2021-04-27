@@ -25,8 +25,18 @@ namespace Full_GRASP_And_SOLID.Library
             this.steps.Remove(step);
         }
 
+        double costototal = 0;
+        double GetProductionCost()
+        {
+            foreach (Step step in this.steps)
+            {
+                costototal = costototal + step.GetStepCost();
+            }
+            return costototal;
+        }
 
-
+/* En esta parte de la Recipe, agregamos el cálculo del costo total, esto se logra sumando los costos de cada
+paso que tiene la receta, ya que es la única que conoce esta información.*/
         public void PrintRecipe()
         {
             Console.WriteLine($"Receta de {this.FinalProduct.Description}:");
@@ -34,7 +44,6 @@ namespace Full_GRASP_And_SOLID.Library
             {
                 Console.WriteLine($"{step.Quantity} de '{step.Input.Description}' " +
                     $"usando '{step.Equipment.Description}' durante {step.Time}");
-                costototal = costototal + this.GetProductionCost(step);
             }
             Console.WriteLine($"El costo total de producción es de $ {costototal}");
         }
