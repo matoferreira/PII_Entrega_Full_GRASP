@@ -34,5 +34,11 @@ namespace Full_GRASP_And_SOLID.Library
                     $"usando '{step.Equipment.Description}' durante {step.Time}");
             }
         }
+         public double GetProductionCost(Step step)
+        {
+            double costo = 0;
+            costo = costo + step.Quantity * step.Input.UnitCost + step.Equipment.HourlyCost * step.Time;
+            return costo;
+        }
     }
 }
