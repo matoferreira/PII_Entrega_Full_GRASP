@@ -25,7 +25,7 @@ namespace Full_GRASP_And_SOLID.Library
             this.steps.Remove(step);
         }
 
-        double costototal = 0;
+
 
         public void PrintRecipe()
         {
@@ -38,14 +38,5 @@ namespace Full_GRASP_And_SOLID.Library
             }
             Console.WriteLine($"El costo total de producción es de $ {costototal}");
         }
-         public double GetProductionCost(Step step)
-        {
-            double costo = 0;
-            costo = costo + step.Quantity * step.Input.UnitCost + step.Equipment.HourlyCost * step.Time;
-            return costo;
-        }
     }
-            /*Agregamos el método en la clase recipe porque acorde al patrón expert es la que tiene toda la información para realizar los cálculos.
-        Esta clase conoce el costo de los productos y materiales que están siendo usados para la elaboración de la receta y por lo tanto puede
-         calcular el resultado final*/
 }
