@@ -41,4 +41,7 @@ namespace Full_GRASP_And_SOLID.Library
             return costo;
         }
     }
+            /*Agregamos el método en la clase recipe porque acorde al patrón expert es la que tiene toda la información para realizar los cálculos.
+        Esta clase conoce el costo de los productos y materiales que están siendo usados para la elaboración de la receta y por lo tanto puede
+         calcular el resultado final*/
 }
