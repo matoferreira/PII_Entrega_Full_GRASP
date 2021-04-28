@@ -3,7 +3,7 @@
 // Copyright (c) Programación II. Derechos reservados.
 // </copyright>
 //-------------------------------------------------------------------------------
-
+using System;
 namespace Full_GRASP_And_SOLID.Library
 {
     public class Step
@@ -23,5 +23,16 @@ namespace Full_GRASP_And_SOLID.Library
         public int Time { get; set; }
 
         public Equipment Equipment { get; set; }
+        
+
+        public double GetStepCost()
+        {
+            double costostep = this.Quantity * this.Input.UnitCost + this.Equipment.HourlyCost * this.Time;
+            return costostep;
+        }
     }
-}
+        /*Agregamos el método que calcula el costo por paso en la clase Step,
+        porque acorde al patrón expert es la que tiene toda la información para realizar los cálculos.
+        Esta clase conoce el costo de los productos y materiales que están siendo usados para la elaboración de la receta en cada paso
+        y por lo tanto puede calcular el resultado final de cada paso*/
+ }
