@@ -25,9 +25,9 @@ namespace Full_GRASP_And_SOLID.Library
             this.steps.Remove(step);
         }
 
-        double costototal = 0;
         double GetProductionCost()
         {
+            double costototal = 0;
             foreach (Step step in this.steps)
             {
                 costototal = costototal + step.GetStepCost();
@@ -45,7 +45,7 @@ paso que tiene la receta, ya que es la única que conoce esta información.*/
                 Console.WriteLine($"{step.Quantity} de '{step.Input.Description}' " +
                     $"usando '{step.Equipment.Description}' durante {step.Time}");
             }
-            Console.WriteLine($"El costo total de producción es de $ {costototal}");
+            Console.WriteLine($"El costo total de producción es de $ {GetProductionCost()}");
         }
     }
 }
